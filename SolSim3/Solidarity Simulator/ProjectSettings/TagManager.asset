@@ -50,6 +50,9 @@ TagManager:
   - name: Structure
     uniqueID: 2286786261
     locked: 0
+  - name: Interactables
+    uniqueID: 2042064467
+    locked: 0
   - name: Characters
     uniqueID: 1210618433
     locked: 0

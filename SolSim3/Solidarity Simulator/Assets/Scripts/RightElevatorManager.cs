@@ -15,12 +15,12 @@ public class RightElevatorManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (upOrDown == "down")
+        if (collision is CapsuleCollider2D && upOrDown == "down")
         {
             animator.SetTrigger("TriggerUp");
             walls.SetActive(true);
         }
-        else if (upOrDown == "up")
+        else if (collision is CapsuleCollider2D && upOrDown == "up")
         {
             animator.SetTrigger("TriggerDown");
             walls.SetActive(true);

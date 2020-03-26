@@ -61,12 +61,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\DialogueManager.cs" />
+    <Compile Include="Assets\PressPanelManager.cs" />
+    <Compile Include="Assets\Scripts\ElevatorMiddleTriggerDown.cs" />
     <Compile Include="Assets\Scripts\ElevatorTriggerDown.cs" />
     <Compile Include="Assets\Scripts\ElevatorTriggerUp.cs" />
+    <Compile Include="Assets\Scripts\InteractableManager.cs" />
     <Compile Include="Assets\Scripts\InteractionManager.cs" />
     <Compile Include="Assets\Scripts\LeftElevatorManager.cs" />
+    <Compile Include="Assets\Scripts\MiddleElevatorManager.cs" />
     <Compile Include="Assets\Scripts\MovementController.cs" />
+    <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\OptionManager.cs" />
     <Compile Include="Assets\Scripts\PromptManager.cs" />
     <Compile Include="Assets\Scripts\ResponseManager.cs" />
@@ -91,22 +95,22 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Cinemachine">
-      <HintPath>/Users/jayackley/Desktop/SolSim3/Solidarity Simulator/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+      <HintPath>/Users/jayackley/Desktop/SolSimCollaborator/SolSim3/Solidarity Simulator/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>/Users/jayackley/Desktop/SolSim3/Solidarity Simulator/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>/Users/jayackley/Desktop/SolSimCollaborator/SolSim3/Solidarity Simulator/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/jayackley/Desktop/SolSim3/Solidarity Simulator/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>/Users/jayackley/Desktop/SolSimCollaborator/SolSim3/Solidarity Simulator/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>/Users/jayackley/Desktop/SolSim3/Solidarity Simulator/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>/Users/jayackley/Desktop/SolSimCollaborator/SolSim3/Solidarity Simulator/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>/Users/jayackley/Desktop/SolSim3/Solidarity Simulator/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+      <HintPath>/Users/jayackley/Desktop/SolSimCollaborator/SolSim3/Solidarity Simulator/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/jayackley/Desktop/SolSim3/Solidarity Simulator/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/Users/jayackley/Desktop/SolSimCollaborator/SolSim3/Solidarity Simulator/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

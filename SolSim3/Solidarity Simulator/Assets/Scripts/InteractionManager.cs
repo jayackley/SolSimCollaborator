@@ -40,6 +40,7 @@ public class InteractionManager : MonoBehaviour
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "wrench";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(101,100,219,255);
             promptPanel.transform.localPosition = new Vector3(-170, 126, 0);
@@ -63,6 +64,7 @@ public class InteractionManager : MonoBehaviour
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "wrench";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(101, 100, 219, 255);
             promptPanel.transform.localPosition = new Vector3(170, 126, 0);
@@ -71,6 +73,7 @@ public class InteractionManager : MonoBehaviour
             optionThree.transform.localPosition = new Vector3(-221, -150, 0);
             solidarityPanel.transform.localPosition = new Vector3(242, -150, 0);
             optionManager.GetComponent<OptionManager>().currentSelect = 1;
+            playerObject.GetComponent<SpriteRenderer>().flipX = true;
 
         }
 
@@ -86,6 +89,7 @@ public class InteractionManager : MonoBehaviour
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "temp";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(137, 210, 220,255);
             promptPanel.transform.localPosition = new Vector3(-170, 126, 0);
@@ -94,6 +98,7 @@ public class InteractionManager : MonoBehaviour
             optionThree.transform.localPosition = new Vector3(221, -150, 0);
             solidarityPanel.transform.localPosition = new Vector3(-242, -150, 0);
             optionManager.GetComponent<OptionManager>().currentSelect = 1;
+            playerObject.GetComponent<SpriteRenderer>().flipX = false;
         }
 
         else if (collision.gameObject.name == "Temp" && playerObject.transform.position.x < temp.transform.position.x)
@@ -108,6 +113,7 @@ public class InteractionManager : MonoBehaviour
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "temp";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(137, 210, 220, 255);
             promptPanel.transform.localPosition = new Vector3(170, 126, 0);
@@ -130,6 +136,7 @@ public class InteractionManager : MonoBehaviour
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "welder";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 1, 219,255);
             promptPanel.transform.localPosition = new Vector3(-170, 126, 0);
@@ -152,6 +159,7 @@ public class InteractionManager : MonoBehaviour
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "welder";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 1, 219, 255);
             promptPanel.transform.localPosition = new Vector3(170, 126, 0);
@@ -174,6 +182,7 @@ public class InteractionManager : MonoBehaviour
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "bigguy";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(16, 83, 73,255);
             promptPanel.transform.localPosition = new Vector3(-170, 126, 0);
@@ -195,6 +204,7 @@ public class InteractionManager : MonoBehaviour
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "bigguy";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(16, 83, 73, 255);
             promptPanel.transform.localPosition = new Vector3(170, 126, 0);
@@ -216,6 +226,7 @@ public class InteractionManager : MonoBehaviour
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "data";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
             promptPanel.transform.localPosition = new Vector3(-170, 126, 0);
@@ -237,6 +248,7 @@ public class InteractionManager : MonoBehaviour
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "data";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
             promptPanel.transform.localPosition = new Vector3(170, 126, 0);
@@ -258,6 +270,7 @@ public class InteractionManager : MonoBehaviour
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "accounting";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 148, 0,255);
             promptPanel.transform.localPosition = new Vector3(-170, 126, 0);
@@ -279,6 +292,7 @@ public class InteractionManager : MonoBehaviour
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "accounting";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 148, 0, 255);
             promptPanel.transform.localPosition = new Vector3(170, 126, 0);
@@ -300,6 +314,7 @@ public class InteractionManager : MonoBehaviour
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "manager";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(127, 5, 40,255);
             promptPanel.transform.localPosition = new Vector3(-170, 126, 0);
@@ -321,6 +336,7 @@ public class InteractionManager : MonoBehaviour
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "manager";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(127, 5, 40, 255);
             promptPanel.transform.localPosition = new Vector3(170, 126, 0);

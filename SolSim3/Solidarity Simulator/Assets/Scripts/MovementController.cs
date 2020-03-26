@@ -15,6 +15,7 @@ public class MovementController : MonoBehaviour
     AudioSource sound;
     public float Volume;
     public bool footSteps;
+    public bool flipped;
 
     private void Awake()
     {
@@ -25,9 +26,10 @@ public class MovementController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && GetComponent<Rigidbody2D>().velocity.y <= 0.0001 && GetComponent<Rigidbody2D>().velocity.y >= -0.0001)
         {
             rigidbody2d.velocity = Vector2.up * jumpVelocity;
+            GetComponent<Animator>().SetBool("ispoking", false);
             GetComponent<Animator>().SetBool("isjumping", true);
             sound.PlayOneShot(jump, Volume);
         }
@@ -43,17 +45,29 @@ public class MovementController : MonoBehaviour
             GetComponent<Animator>().SetBool("iswalking", true);
             footSteps = true;
         }
-        else if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
+
+        else if (GetComponent<Rigidbody2D>().velocity.y <= -0.0001)
         {
+            rigidbody2d.velocity = new Vector2(0, rigidbody2d.velocity.y);
             GetComponent<Animator>().SetBool("isjumping", false);
+            GetComponent<Animator>().SetBool("isfalling", true);
         }
+
+        else if (Input.GetKey(KeyCode.Return) && GetComponent<Rigidbody2D>().velocity.y <= 0.0001 && GetComponent<Rigidbody2D>().velocity.y >= -0.0001 && GetComponent<Rigidbody2D>().velocity.x <= 0.0001 && GetComponent<Rigidbody2D>().velocity.x >= -0.0001)
+        {
+            GetComponent<Animator>().SetBool("ispoking", true);
+            
+        }
+        
         else
         {
             rigidbody2d.velocity = new Vector2(0, rigidbody2d.velocity.y);
             GetComponent<Animator>().SetBool("iswalking", false);
             GetComponent<Animator>().SetBool("isjumping", false);
+            GetComponent<Animator>().SetBool("isfalling", false);
             footSteps = false;
         }
+
 
         bool flipSprite = (spriteRenderer.flipX ? (rigidbody2d.velocity.x < 0.0f) : (rigidbody2d.velocity.x > 0.0f));
 
@@ -76,6 +90,18 @@ public class MovementController : MonoBehaviour
         {
             sound.loop = false;
         }
+
+        if (spriteRenderer.flipX == true)
+        {
+            flipped = true;
+            playerObject.GetComponent<BoxCollider2D>().offset = new Vector2(0.86f, 0.13f);
+        }
+        else if (spriteRenderer.flipX == false)
+        {
+            flipped = false;
+            playerObject.GetComponent<BoxCollider2D>().offset = new Vector2(-0.86f, 0.13f);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -93,6 +119,19 @@ public class MovementController : MonoBehaviour
             diagonal = true;
             playerObject.GetComponent<Transform>().rotation = Quaternion.Euler(0, 0, 0);
         }
+    }
+
+    public void TurnOffPoking(AnimationEvent animation) 
+    {
+        GetComponent<Animator>().SetBool("ispoking", false);
+    }
+
+    public void Poke()
+    {
+        GameObject.Find("WaterCooler").GetComponent<InteractableManager>().Pour();
+        GameObject.Find("Button").GetComponent<InteractableManager>().Pour();
+        GameObject.Find("WaterCooler").GetComponent<InteractableManager>().primed = false;
+        GameObject.Find("Button").GetComponent<InteractableManager>().primed = false;
     }
 }
 

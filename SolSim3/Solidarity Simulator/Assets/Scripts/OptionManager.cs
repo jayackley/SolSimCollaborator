@@ -38,7 +38,7 @@ public class OptionManager : MonoBehaviour
             numberOfOptions = 2;
         }
 
-        else if ((sentenceIndex >= 4 && sentenceIndex <= 10) || (sentenceIndex >= 15 && sentenceIndex <= 20) || (sentenceIndex >= 24 && sentenceIndex <= 28) || (sentenceIndex >= 32 && sentenceIndex <= 35) || (sentenceIndex >= 38 && sentenceIndex <= 41) || (sentenceIndex >= 46 && sentenceIndex <= 51) || (sentenceIndex >= 55 && sentenceIndex <= 59))
+        else if ((sentenceIndex >= 4 && sentenceIndex <= 10) || (sentenceIndex >= 14 && sentenceIndex <= 20) || (sentenceIndex >= 24 && sentenceIndex <= 28) || (sentenceIndex >= 32 && sentenceIndex <= 35) || (sentenceIndex >= 38 && sentenceIndex <= 41) || (sentenceIndex >= 46 && sentenceIndex <= 51) || (sentenceIndex >= 55 && sentenceIndex <= 59))
         {
             numberOfOptions = 0;
         }
@@ -178,7 +178,7 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 0 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
-            sentenceIndex = 2;
+            sentenceIndex = 3;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 1;
         }
@@ -608,9 +608,9 @@ public class OptionManager : MonoBehaviour
 
         else if (Event.current.Equals(Event.KeyboardEvent("return")) && numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
+            playerObject.GetComponent<MovementController>().enabled = true;
             playerObject.GetComponent<InteractionManager>().dialogueVisible = false;
             uiCanvas.GetComponent<Canvas>().enabled = false;
-            playerObject.GetComponent<MovementController>().enabled = true;
             playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 

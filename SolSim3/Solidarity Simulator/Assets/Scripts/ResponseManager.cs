@@ -14,17 +14,6 @@ public class ResponseManager : MonoBehaviour {
     void Update()
     {
         textDisplay.text = sentences[optionManager.GetComponent<OptionManager>().sentenceIndex];
-
-        /*
-        if (promptManager.GetComponent<PromptManager>().isTyping == true)
-        {
-            optionManager.GetComponent<Canvas>().enabled = false;
-        }
-        else if (promptManager.GetComponent<PromptManager>().isTyping == false)
-        {
-            optionManager.GetComponent<Canvas>().enabled = true;
-        }
-        */
     }
 
 }
