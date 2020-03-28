@@ -61,20 +61,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\PressPanelManager.cs" />
+    <Compile Include="Assets\Scripts\CameraManager.cs" />
+    <Compile Include="Assets\Scripts\ElevatorManager.cs" />
     <Compile Include="Assets\Scripts\ElevatorMiddleTriggerDown.cs" />
     <Compile Include="Assets\Scripts\ElevatorTriggerDown.cs" />
     <Compile Include="Assets\Scripts\ElevatorTriggerUp.cs" />
     <Compile Include="Assets\Scripts\InteractableManager.cs" />
     <Compile Include="Assets\Scripts\InteractionManager.cs" />
-    <Compile Include="Assets\Scripts\LeftElevatorManager.cs" />
-    <Compile Include="Assets\Scripts\MiddleElevatorManager.cs" />
     <Compile Include="Assets\Scripts\MovementController.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\OptionManager.cs" />
+    <Compile Include="Assets\Scripts\PressPanelManager.cs" />
     <Compile Include="Assets\Scripts\PromptManager.cs" />
     <Compile Include="Assets\Scripts\ResponseManager.cs" />
-    <Compile Include="Assets\Scripts\RightElevatorManager.cs" />
     <Compile Include="Assets\Scripts\SceneManager.cs" />
     <Compile Include="Assets\Scripts\SolidarityManager.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

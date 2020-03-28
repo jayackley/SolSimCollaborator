@@ -49,6 +49,8 @@ public class MovementController : MonoBehaviour
         else if (GetComponent<Rigidbody2D>().velocity.y <= -0.0001)
         {
             rigidbody2d.velocity = new Vector2(0, rigidbody2d.velocity.y);
+            GetComponent<Animator>().SetBool("iswalking", false);
+            footSteps = false;
             GetComponent<Animator>().SetBool("isjumping", false);
             GetComponent<Animator>().SetBool("isfalling", true);
         }
@@ -110,6 +112,7 @@ public class MovementController : MonoBehaviour
         {
             diagonal = true;
             playerObject.GetComponent<Transform>().rotation = Quaternion.Euler(0, 0, 30);
+            footSteps = false;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

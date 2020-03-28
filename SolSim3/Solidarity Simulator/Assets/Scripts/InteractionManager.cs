@@ -26,6 +26,7 @@ public class InteractionManager : MonoBehaviour
     public GameObject manager;
 
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Wrench" && playerObject.transform.position.x > wrench.transform.position.x)

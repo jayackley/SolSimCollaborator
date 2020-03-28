@@ -10,22 +10,13 @@ public class ElevatorTriggerUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (rightElevator.GetComponent<RightElevatorManager>().upOrDown == "down")
+        if (rightElevator.GetComponent<ElevatorManager>().upOrDown == "down")
         {
-            rightElevator.GetComponent<Animator>().SetTrigger("TriggerUp");
-            rightElevator.GetComponent<Animator>().speed = 10;
-            rightElevator.GetComponent<RightElevatorManager>().upOrDown = "up";
+            rightElevator.transform.position = rightElevator.GetComponent<ElevatorManager>().elevatorTop;
         }
-        if (leftElevator.GetComponent<LeftElevatorManager>().upOrDown == "down")
+        if (leftElevator.GetComponent<ElevatorManager>().upOrDown == "down")
         {
-            leftElevator.GetComponent<Animator>().SetTrigger("TriggerUp");
-            leftElevator.GetComponent<Animator>().speed = 10; 
-            leftElevator.GetComponent<LeftElevatorManager>().upOrDown = "up";
-        }
-        if (middleElevator.GetComponent<MiddleElevatorManager>().upOrDown == "down")
-        {
-            middleElevator.GetComponent<Animator>().SetTrigger("TriggerUp");
-            middleElevator.GetComponent<Animator>().speed = 10;
+            leftElevator.transform.position = leftElevator.GetComponent<ElevatorManager>().elevatorTop;
         }
     }
 }

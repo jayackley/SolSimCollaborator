@@ -9,15 +9,16 @@ public class ElevatorTriggerDown : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (rightElevator.GetComponent<RightElevatorManager>().upOrDown == "up")
+        if (rightElevator.GetComponent<ElevatorManager>().upOrDown == "up")
         {
-            rightElevator.GetComponent<Animator>().SetTrigger("TriggerDown");
-            rightElevator.GetComponent<Animator>().speed = 10;
+            rightElevator.GetComponent<ElevatorManager>().goingDown = true;
+            rightElevator.GetComponent<ElevatorManager>().upOrDown = "";
+
         }
-        if (leftElevator.GetComponent<LeftElevatorManager>().upOrDown == "up")
+        if (leftElevator.GetComponent<ElevatorManager>().upOrDown == "up")
         {
-            leftElevator.GetComponent<Animator>().SetTrigger("TriggerDown");
-            leftElevator.GetComponent<Animator>().speed = 10;
+            leftElevator.GetComponent<ElevatorManager>().goingDown = true;
+            leftElevator.GetComponent<ElevatorManager>().upOrDown = "";
         }
     }
 }

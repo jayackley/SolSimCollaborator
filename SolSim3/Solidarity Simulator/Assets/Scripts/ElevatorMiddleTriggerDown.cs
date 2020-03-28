@@ -8,10 +8,9 @@ public class ElevatorMiddleTriggerDown : MonoBehaviour
    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (middleElevator.GetComponent<MiddleElevatorManager>().upOrDown == "up")
+        if (middleElevator.GetComponent<ElevatorManager>().upOrDown == "up")
         {
-            middleElevator.GetComponent<Animator>().SetTrigger("TriggerDown");
-            middleElevator.GetComponent<Animator>().speed = 10;
+            middleElevator.transform.position = middleElevator.GetComponent<ElevatorManager>().elevatorBottom;
         }
     }
 }
