@@ -31,6 +31,7 @@ public class InteractionManager : MonoBehaviour
     {
         if (collision.gameObject.name == "Wrench" && playerObject.transform.position.x > wrench.transform.position.x)
         {
+            playerObject.GetComponent<MovementController>().canPoke = false;
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
@@ -43,7 +44,8 @@ public class InteractionManager : MonoBehaviour
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
             playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "wrench";
-            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(101,100,219,255);
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(101, 100, 219, 255);
             promptPanel.transform.localPosition = new Vector3(-170, 126, 0);
             optionOne.transform.localPosition = new Vector3(221, 50, 0);
             optionTwo.transform.localPosition = new Vector3(221, -50, 0);
@@ -55,6 +57,8 @@ public class InteractionManager : MonoBehaviour
 
         else if (collision.gameObject.name == "Wrench" && playerObject.transform.position.x < wrench.transform.position.x)
         {
+
+            playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
@@ -67,7 +71,8 @@ public class InteractionManager : MonoBehaviour
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
             playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "wrench";
-            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(101, 100, 219, 255);
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(101, 100, 219, 255);
             promptPanel.transform.localPosition = new Vector3(170, 126, 0);
             optionOne.transform.localPosition = new Vector3(-221, 50, 0);
             optionTwo.transform.localPosition = new Vector3(-221, -50, 0);
@@ -80,6 +85,7 @@ public class InteractionManager : MonoBehaviour
 
         else if (collision.gameObject.name == "Temp" && playerObject.transform.position.x > temp.transform.position.x)
         {
+            playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
@@ -92,7 +98,8 @@ public class InteractionManager : MonoBehaviour
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
             playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "temp";
-            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(137, 210, 220,255);
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(137, 210, 220, 255);
             promptPanel.transform.localPosition = new Vector3(-170, 126, 0);
             optionOne.transform.localPosition = new Vector3(221, 50, 0);
             optionTwo.transform.localPosition = new Vector3(221, -50, 0);
@@ -104,6 +111,7 @@ public class InteractionManager : MonoBehaviour
 
         else if (collision.gameObject.name == "Temp" && playerObject.transform.position.x < temp.transform.position.x)
         {
+            playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
@@ -116,7 +124,8 @@ public class InteractionManager : MonoBehaviour
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
             playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "temp";
-            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(137, 210, 220, 255);
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(137, 210, 220, 255);
             promptPanel.transform.localPosition = new Vector3(170, 126, 0);
             optionOne.transform.localPosition = new Vector3(-221, 50, 0);
             optionTwo.transform.localPosition = new Vector3(-221, -50, 0);
@@ -127,6 +136,7 @@ public class InteractionManager : MonoBehaviour
 
         else if (collision.gameObject.name == "Welder" && playerObject.transform.position.x > welder.transform.position.x)
         {
+            playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
@@ -139,7 +149,8 @@ public class InteractionManager : MonoBehaviour
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
             playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "welder";
-            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 1, 219,255);
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 1, 219, 255);
             promptPanel.transform.localPosition = new Vector3(-170, 126, 0);
             optionOne.transform.localPosition = new Vector3(221, 50, 0);
             optionTwo.transform.localPosition = new Vector3(221, -50, 0);
@@ -150,6 +161,7 @@ public class InteractionManager : MonoBehaviour
         }
         else if (collision.gameObject.name == "Welder" && playerObject.transform.position.x < welder.transform.position.x)
         {
+            playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
@@ -162,7 +174,8 @@ public class InteractionManager : MonoBehaviour
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
             playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "welder";
-            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 1, 219, 255);
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 1, 219, 255);
             promptPanel.transform.localPosition = new Vector3(170, 126, 0);
             optionOne.transform.localPosition = new Vector3(-221, 50, 0);
             optionTwo.transform.localPosition = new Vector3(-221, -50, 0);
@@ -173,7 +186,8 @@ public class InteractionManager : MonoBehaviour
         }
         else if (collision.gameObject.name == "BigGuy" && playerObject.transform.position.x > bigGuy.transform.position.x)
         {
-            dialogueVisible = true;
+
+            playerObject.GetComponent<MovementController>().canPoke = false; dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
             playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
@@ -185,7 +199,8 @@ public class InteractionManager : MonoBehaviour
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
             playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "bigguy";
-            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(16, 83, 73,255);
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(16, 83, 73, 255);
             promptPanel.transform.localPosition = new Vector3(-170, 126, 0);
             optionOne.transform.localPosition = new Vector3(221, 50, 0);
             optionTwo.transform.localPosition = new Vector3(221, -50, 0);
@@ -195,6 +210,7 @@ public class InteractionManager : MonoBehaviour
         }
         else if (collision.gameObject.name == "BigGuy" && playerObject.transform.position.x < bigGuy.transform.position.x)
         {
+            playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
@@ -207,7 +223,8 @@ public class InteractionManager : MonoBehaviour
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
             playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "bigguy";
-            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(16, 83, 73, 255);
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(16, 83, 73, 255);
             promptPanel.transform.localPosition = new Vector3(170, 126, 0);
             optionOne.transform.localPosition = new Vector3(-221, 50, 0);
             optionTwo.transform.localPosition = new Vector3(-221, -50, 0);
@@ -217,6 +234,7 @@ public class InteractionManager : MonoBehaviour
         }
         else if (collision.gameObject.name == "Data" && playerObject.transform.position.x > data.transform.position.x)
         {
+            playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
@@ -230,6 +248,7 @@ public class InteractionManager : MonoBehaviour
             playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "data";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 255, 255, 255);
             promptPanel.transform.localPosition = new Vector3(-170, 126, 0);
             optionOne.transform.localPosition = new Vector3(221, 50, 0);
             optionTwo.transform.localPosition = new Vector3(221, -50, 0);
@@ -239,6 +258,7 @@ public class InteractionManager : MonoBehaviour
         }
         else if (collision.gameObject.name == "Data" && playerObject.transform.position.x < data.transform.position.x)
         {
+            playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
@@ -252,6 +272,7 @@ public class InteractionManager : MonoBehaviour
             playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "data";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 255, 255, 255);
             promptPanel.transform.localPosition = new Vector3(170, 126, 0);
             optionOne.transform.localPosition = new Vector3(-221, 50, 0);
             optionTwo.transform.localPosition = new Vector3(-221, -50, 0);
@@ -261,6 +282,7 @@ public class InteractionManager : MonoBehaviour
         }
         else if (collision.gameObject.name == "Accounting" && playerObject.transform.position.x > accounting.transform.position.x)
         {
+            playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
@@ -273,7 +295,8 @@ public class InteractionManager : MonoBehaviour
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
             playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "accounting";
-            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 148, 0,255);
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 148, 0, 255);
             promptPanel.transform.localPosition = new Vector3(-170, 126, 0);
             optionOne.transform.localPosition = new Vector3(221, 50, 0);
             optionTwo.transform.localPosition = new Vector3(221, -50, 0);
@@ -283,6 +306,7 @@ public class InteractionManager : MonoBehaviour
         }
         else if (collision.gameObject.name == "Accounting" && playerObject.transform.position.x < accounting.transform.position.x)
         {
+            playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
@@ -295,7 +319,8 @@ public class InteractionManager : MonoBehaviour
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
             playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "accounting";
-            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 148, 0, 255);
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 148, 0, 255);
             promptPanel.transform.localPosition = new Vector3(170, 126, 0);
             optionOne.transform.localPosition = new Vector3(-221, 50, 0);
             optionTwo.transform.localPosition = new Vector3(-221, -50, 0);
@@ -305,6 +330,7 @@ public class InteractionManager : MonoBehaviour
         }
         else if (collision.gameObject.name == "Manager" && playerObject.transform.position.x > manager.transform.position.x)
         {
+            playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
@@ -317,7 +343,8 @@ public class InteractionManager : MonoBehaviour
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
             playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "manager";
-            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(127, 5, 40,255);
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(127, 5, 40, 255);
             promptPanel.transform.localPosition = new Vector3(-170, 126, 0);
             optionOne.transform.localPosition = new Vector3(221, 50, 0);
             optionTwo.transform.localPosition = new Vector3(221, -50, 0);
@@ -327,6 +354,7 @@ public class InteractionManager : MonoBehaviour
         }
         else if (collision.gameObject.name == "Manager" && playerObject.transform.position.x < manager.transform.position.x)
         {
+            playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
@@ -339,7 +367,8 @@ public class InteractionManager : MonoBehaviour
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
             playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "manager";
-            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(127, 5, 40, 255);
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255); 
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(127, 5, 40, 255);
             promptPanel.transform.localPosition = new Vector3(170, 126, 0);
             optionOne.transform.localPosition = new Vector3(-221, 50, 0);
             optionTwo.transform.localPosition = new Vector3(-221, -50, 0);
@@ -349,16 +378,13 @@ public class InteractionManager : MonoBehaviour
         }
     }
 
-    private void OnGUI()
-    {
-
-    }
 
     private void Update()
     {
         if (promptPanel.GetComponent<PromptManager>().isTyping == true & whosTalking == "wrench")
         {
             wrench.GetComponent<AudioSource>().volume = 1;
+            wrench.GetComponent<Animator>().SetBool("IsTalking", true);
         }
         else if (promptPanel.GetComponent<PromptManager>().isTyping == true & whosTalking == "temp")
         {
@@ -393,6 +419,7 @@ public class InteractionManager : MonoBehaviour
             data.GetComponent<AudioSource>().volume = 0;
             accounting.GetComponent<AudioSource>().volume = 0;
             manager.GetComponent<AudioSource>().volume = 0;
+            wrench.GetComponent<Animator>().SetBool("IsTalking", false);
         }
 
         bool flipBigGuy = (bigGuy.GetComponent<SpriteRenderer>().flipX ? (playerObject.transform.position.x > bigGuy.transform.position.x) : (playerObject.transform.position.x < bigGuy.transform.position.x));

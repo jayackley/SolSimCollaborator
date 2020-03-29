@@ -18,5 +18,9 @@ public class ElevatorTriggerUp : MonoBehaviour
         {
             leftElevator.transform.position = leftElevator.GetComponent<ElevatorManager>().elevatorTop;
         }
+        if (middleElevator.GetComponent<ElevatorManager>().upOrDown == "down")
+        {
+            middleElevator.transform.position = middleElevator.GetComponent<ElevatorManager>().elevatorTop;
+        }
     }
 }

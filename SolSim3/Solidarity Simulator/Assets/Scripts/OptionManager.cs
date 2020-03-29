@@ -16,6 +16,7 @@ public class OptionManager : MonoBehaviour
     public GameObject playerObject;
     public GameObject uiCanvas;
     public int numberOfOptions;
+    public GameObject sceneManager;
 
     void Start()
     {
@@ -587,6 +588,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 54
+
         else if ((sentenceIndex == 54 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
@@ -606,17 +608,22 @@ public class OptionManager : MonoBehaviour
 
         //end scene
 
-        else if (Event.current.Equals(Event.KeyboardEvent("return")) && numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if (Event.current.Equals(Event.KeyboardEvent("return")) && numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false && sceneManager.GetComponent<SceneManager>().convoCounter == 7)
+        {
+            playerObject.GetComponent<MovementController>().canPoke = true;
+            playerObject.GetComponent<MovementController>().enabled = true;
+            playerObject.GetComponent<InteractionManager>().dialogueVisible = false;
+            playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            sceneManager.GetComponent<SceneManager>().convoCounter += 1;
+
+        }
+        else if (Event.current.Equals(Event.KeyboardEvent("return")) && numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false && sceneManager.GetComponent<SceneManager>().convoCounter < 7)
         {
             playerObject.GetComponent<MovementController>().enabled = true;
             playerObject.GetComponent<InteractionManager>().dialogueVisible = false;
             uiCanvas.GetComponent<Canvas>().enabled = false;
             playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            playerObject.GetComponent<MovementController>().canPoke = true;
         }
-
-
-
     }
-
-
 }

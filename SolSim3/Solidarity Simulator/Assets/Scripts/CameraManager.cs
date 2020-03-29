@@ -14,7 +14,8 @@ public class CameraManager : MonoBehaviour {
     public GameObject dataCam;
     public GameObject accountingCam;
     public GameObject managerCam;
-
+    public GameObject orbCam;
+    public GameObject corporateCam;
 	
 	void Start ()
     {
@@ -55,6 +56,14 @@ public class CameraManager : MonoBehaviour {
         {
             whosFocus = "manager";
         }
+        if (Event.current.Equals(Event.KeyboardEvent("8")))
+        {
+            whosFocus = "orb";
+        }
+        if (Event.current.Equals(Event.KeyboardEvent("9")))
+        {
+            whosFocus = "corporate";
+        }
     }
     void Update () 
     {
@@ -68,6 +77,8 @@ public class CameraManager : MonoBehaviour {
             dataCam.SetActive(false);
             accountingCam.SetActive(false);
             managerCam.SetActive(false);
+            orbCam.SetActive(false);
+            corporateCam.SetActive(false);
         }
         if (whosFocus == "wrench")
         {
@@ -79,6 +90,8 @@ public class CameraManager : MonoBehaviour {
             dataCam.SetActive(false);
             accountingCam.SetActive(false);
             managerCam.SetActive(false);
+            orbCam.SetActive(false);
+            corporateCam.SetActive(false);
         }
         if (whosFocus == "temp")
         {
@@ -90,6 +103,8 @@ public class CameraManager : MonoBehaviour {
             dataCam.SetActive(false);
             accountingCam.SetActive(false);
             managerCam.SetActive(false);
+            orbCam.SetActive(false);
+            corporateCam.SetActive(false);
         }
         if (whosFocus == "welder")
         {
@@ -101,6 +116,8 @@ public class CameraManager : MonoBehaviour {
             dataCam.SetActive(false);
             accountingCam.SetActive(false);
             managerCam.SetActive(false);
+            orbCam.SetActive(false);
+            corporateCam.SetActive(false);
         }
         if (whosFocus == "bigguy")
         {
@@ -112,6 +129,8 @@ public class CameraManager : MonoBehaviour {
             dataCam.SetActive(false);
             accountingCam.SetActive(false);
             managerCam.SetActive(false);
+            orbCam.SetActive(false);
+            corporateCam.SetActive(false);
         }
         if (whosFocus == "data")
         {
@@ -123,6 +142,8 @@ public class CameraManager : MonoBehaviour {
             dataCam.SetActive(true);
             accountingCam.SetActive(false);
             managerCam.SetActive(false);
+            orbCam.SetActive(false);
+            corporateCam.SetActive(false);
         }
         if (whosFocus == "accounting")
         {
@@ -134,6 +155,8 @@ public class CameraManager : MonoBehaviour {
             dataCam.SetActive(false);
             accountingCam.SetActive(true);
             managerCam.SetActive(false);
+            orbCam.SetActive(false);
+            corporateCam.SetActive(false);
         }
         if (whosFocus == "manager")
         {
@@ -145,6 +168,34 @@ public class CameraManager : MonoBehaviour {
             dataCam.SetActive(false);
             accountingCam.SetActive(false);
             managerCam.SetActive(true);
+            orbCam.SetActive(false);
+            corporateCam.SetActive(false);
+        }
+        if (whosFocus == "orb")
+        {
+            pcCam.SetActive(false);
+            wrenchCam.SetActive(false);
+            tempCam.SetActive(false);
+            welderCam.SetActive(false);
+            bigguyCam.SetActive(false);
+            dataCam.SetActive(false);
+            accountingCam.SetActive(false);
+            managerCam.SetActive(false);
+            orbCam.SetActive(true);
+            corporateCam.SetActive(false);
+        }
+        if (whosFocus == "corporate")
+        {
+            corporateCam.SetActive(true);
+            pcCam.SetActive(false);
+            wrenchCam.SetActive(false);
+            tempCam.SetActive(false);
+            welderCam.SetActive(false);
+            bigguyCam.SetActive(false);
+            dataCam.SetActive(false);
+            accountingCam.SetActive(false);
+            managerCam.SetActive(false);
+            orbCam.SetActive(false);
         }
 
     }

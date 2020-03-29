@@ -14,8 +14,13 @@ public class MusicManager : MonoBehaviour {
     public GameObject undertone;
     public GameObject spaceSound;
     public GameObject fluteLead;
+    public GameObject boardMusic1;
+    public GameObject boardMusic2;
+    public GameObject boardMusic3;
+    public GameObject boardMusic4;
     public GameObject sceneManager;
     public GameObject solidarityManager;
+    public GameObject boardManager;
     public float maxVolume;
     public float fadeInSpeed;
     public float startingVolume;
@@ -32,6 +37,11 @@ public class MusicManager : MonoBehaviour {
         chaos.GetComponent<AudioSource>().volume = startingVolume;
         undertone.GetComponent<AudioSource>().volume = startingVolume;
         spaceSound.GetComponent<AudioSource>().volume = startingVolume;
+        boardMusic1.GetComponent<AudioSource>().volume = startingVolume;
+        boardMusic2.GetComponent<AudioSource>().volume = startingVolume;
+        boardMusic3.GetComponent<AudioSource>().volume = startingVolume;
+        boardMusic4.GetComponent<AudioSource>().volume = startingVolume;
+
     }
 	
 	// Update is called once per frame
@@ -147,6 +157,88 @@ public class MusicManager : MonoBehaviour {
             if (fluteLead.GetComponent<AudioSource>().volume < maxVolume)
             {
                 fluteLead.GetComponent<AudioSource>().volume += fadeInSpeed * Time.deltaTime;
+            }
+        }
+
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 9 || sceneManager.GetComponent<SceneManager>().convoCounter == 10 || sceneManager.GetComponent<SceneManager>().convoCounter == 11)
+        {
+            fluteLead.GetComponent<AudioSource>().volume =0;
+            thumps.GetComponent<AudioSource>().volume =0;
+            bass.GetComponent<AudioSource>().volume =0;
+            bleepMajor.GetComponent<AudioSource>().volume =0;
+            bleepMinor.GetComponent<AudioSource>().volume =0;
+            majorArp.GetComponent<AudioSource>().volume =0;
+            minorArp.GetComponent<AudioSource>().volume =0;
+            chaos.GetComponent<AudioSource>().volume =0;
+            undertone.GetComponent<AudioSource>().volume =0;
+            spaceSound.GetComponent<AudioSource>().volume = 0;
+            if (boardMusic1.GetComponent<AudioSource>().volume < maxVolume)
+            {
+                boardMusic1.GetComponent<AudioSource>().volume += fadeInSpeed * Time.deltaTime;
+            }
+        
+        }
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 11 && (boardManager.GetComponent<BoardManager>().index >= 8 && boardManager.GetComponent<BoardManager>().index <= 12))
+        {
+            fluteLead.GetComponent<AudioSource>().volume = 0;
+            thumps.GetComponent<AudioSource>().volume = 0;
+            bass.GetComponent<AudioSource>().volume = 0;
+            bleepMajor.GetComponent<AudioSource>().volume = 0;
+            bleepMinor.GetComponent<AudioSource>().volume = 0;
+            majorArp.GetComponent<AudioSource>().volume = 0;
+            minorArp.GetComponent<AudioSource>().volume = 0;
+            chaos.GetComponent<AudioSource>().volume = 0;
+            undertone.GetComponent<AudioSource>().volume = 0;
+            spaceSound.GetComponent<AudioSource>().volume = 0;
+            if (boardMusic1.GetComponent<AudioSource>().volume > startingVolume)
+            {
+                boardMusic1.GetComponent<AudioSource>().volume -= fadeInSpeed * Time.deltaTime;
+            }
+            if (boardMusic2.GetComponent<AudioSource>().volume < maxVolume)
+            {
+                boardMusic2.GetComponent<AudioSource>().volume += fadeInSpeed * Time.deltaTime;
+            }
+        }
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 11 && (boardManager.GetComponent<BoardManager>().index >= 13 && boardManager.GetComponent<BoardManager>().index <= 17))
+        {
+            fluteLead.GetComponent<AudioSource>().volume = 0;
+            thumps.GetComponent<AudioSource>().volume = 0;
+            bass.GetComponent<AudioSource>().volume = 0;
+            bleepMajor.GetComponent<AudioSource>().volume = 0;
+            bleepMinor.GetComponent<AudioSource>().volume = 0;
+            majorArp.GetComponent<AudioSource>().volume = 0;
+            minorArp.GetComponent<AudioSource>().volume = 0;
+            chaos.GetComponent<AudioSource>().volume = 0;
+            undertone.GetComponent<AudioSource>().volume = 0;
+            spaceSound.GetComponent<AudioSource>().volume = 0;
+            if (boardMusic2.GetComponent<AudioSource>().volume > startingVolume)
+            {
+                boardMusic2.GetComponent<AudioSource>().volume -= fadeInSpeed * Time.deltaTime;
+            }
+            if (boardMusic3.GetComponent<AudioSource>().volume < maxVolume)
+            {
+                boardMusic3.GetComponent<AudioSource>().volume += fadeInSpeed * Time.deltaTime;
+            }
+        }
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 11 && boardManager.GetComponent<BoardManager>().index >= 18)
+        {
+            fluteLead.GetComponent<AudioSource>().volume = 0;
+            thumps.GetComponent<AudioSource>().volume = 0;
+            bass.GetComponent<AudioSource>().volume = 0;
+            bleepMajor.GetComponent<AudioSource>().volume = 0;
+            bleepMinor.GetComponent<AudioSource>().volume = 0;
+            majorArp.GetComponent<AudioSource>().volume = 0;
+            minorArp.GetComponent<AudioSource>().volume = 0;
+            chaos.GetComponent<AudioSource>().volume = 0;
+            undertone.GetComponent<AudioSource>().volume = 0;
+            spaceSound.GetComponent<AudioSource>().volume = 0;
+            if (boardMusic3.GetComponent<AudioSource>().volume > startingVolume)
+            {
+                boardMusic3.GetComponent<AudioSource>().volume -= fadeInSpeed * Time.deltaTime;
+            }
+            if (boardMusic4.GetComponent<AudioSource>().volume < maxVolume)
+            {
+                boardMusic4.GetComponent<AudioSource>().volume += fadeInSpeed * Time.deltaTime;
             }
         }
     }

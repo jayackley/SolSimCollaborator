@@ -65,7 +65,7 @@ public class ElevatorManager : MonoBehaviour {
         yield return new WaitForSeconds(speed);
         walls.SetActive(false);
     }
-    IEnumerator Delevate()
+    public IEnumerator Delevate()
     {
         yield return new WaitForSeconds(Random.Range(.5f, 1.5f));
         goingDown = true;

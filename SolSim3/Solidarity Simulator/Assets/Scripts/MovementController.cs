@@ -16,12 +16,14 @@ public class MovementController : MonoBehaviour
     public float Volume;
     public bool footSteps;
     public bool flipped;
+    public bool canPoke;
 
     private void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         sound = GetComponent<AudioSource>();
+        canPoke = true;
     }
 
     private void Update()
@@ -55,12 +57,6 @@ public class MovementController : MonoBehaviour
             GetComponent<Animator>().SetBool("isfalling", true);
         }
 
-        else if (Input.GetKey(KeyCode.Return) && GetComponent<Rigidbody2D>().velocity.y <= 0.0001 && GetComponent<Rigidbody2D>().velocity.y >= -0.0001 && GetComponent<Rigidbody2D>().velocity.x <= 0.0001 && GetComponent<Rigidbody2D>().velocity.x >= -0.0001)
-        {
-            GetComponent<Animator>().SetBool("ispoking", true);
-            
-        }
-        
         else
         {
             rigidbody2d.velocity = new Vector2(0, rigidbody2d.velocity.y);
@@ -104,6 +100,14 @@ public class MovementController : MonoBehaviour
             playerObject.GetComponent<BoxCollider2D>().offset = new Vector2(-0.86f, 0.13f);
         }
 
+    }
+
+    private void OnGUI()
+    {
+        if (canPoke == true && Event.current.Equals(Event.KeyboardEvent("return")) && GetComponent<Rigidbody2D>().velocity.y <= 0.0001 && GetComponent<Rigidbody2D>().velocity.y >= -0.0001 && GetComponent<Rigidbody2D>().velocity.x <= 0.0001 && GetComponent<Rigidbody2D>().velocity.x >= -0.0001)
+        {
+            GetComponent<Animator>().SetBool("ispoking", true);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
