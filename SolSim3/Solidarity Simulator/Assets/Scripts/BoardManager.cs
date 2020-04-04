@@ -75,6 +75,7 @@ public class BoardManager : MonoBehaviour {
             manager.GetComponent<AudioSource>().volume = 0;
             orb.GetComponent<AudioSource>().volume = 0;
             corporate.GetComponent<AudioSource>().volume = 0;
+            typingSpeed = 0.02f;
         }
         else if (isTyping == true & whosTalking == "temp")
         {
@@ -88,6 +89,7 @@ public class BoardManager : MonoBehaviour {
             manager.GetComponent<AudioSource>().volume = 0;
             orb.GetComponent<AudioSource>().volume = 0;
             corporate.GetComponent<AudioSource>().volume = 0;
+            typingSpeed = 0.02f;
         }
         else if (isTyping == true & whosTalking == "welder")
         {
@@ -101,6 +103,7 @@ public class BoardManager : MonoBehaviour {
             manager.GetComponent<AudioSource>().volume = 0;
             orb.GetComponent<AudioSource>().volume = 0;
             corporate.GetComponent<AudioSource>().volume = 0;
+            typingSpeed = 0.02f;
         }
         else if (isTyping == true & whosTalking == "bigguy")
         {
@@ -114,6 +117,7 @@ public class BoardManager : MonoBehaviour {
             manager.GetComponent<AudioSource>().volume = 0;
             orb.GetComponent<AudioSource>().volume = 0;
             corporate.GetComponent<AudioSource>().volume = 0;
+            typingSpeed = 0.06f;
         }
         else if (isTyping == true & whosTalking == "data")
         {
@@ -127,6 +131,7 @@ public class BoardManager : MonoBehaviour {
             manager.GetComponent<AudioSource>().volume = 0;
             orb.GetComponent<AudioSource>().volume = 0;
             corporate.GetComponent<AudioSource>().volume = 0;
+            typingSpeed = 0.02f;
         }
         else if (isTyping == true & whosTalking == "accounting")
         {
@@ -140,6 +145,7 @@ public class BoardManager : MonoBehaviour {
             manager.GetComponent<AudioSource>().volume = 0;
             orb.GetComponent<AudioSource>().volume = 0;
             corporate.GetComponent<AudioSource>().volume = 0;
+            typingSpeed = 0.02f;
         }
         else if (isTyping == true & whosTalking == "manager")
         {
@@ -153,6 +159,7 @@ public class BoardManager : MonoBehaviour {
 
             orb.GetComponent<AudioSource>().volume = 0;
             corporate.GetComponent<AudioSource>().volume = 0;
+            typingSpeed = 0.02f;
         }
         else if (isTyping == true & whosTalking == "orb")
         {
@@ -166,6 +173,7 @@ public class BoardManager : MonoBehaviour {
             manager.GetComponent<AudioSource>().volume = 0;
 
             corporate.GetComponent<AudioSource>().volume = 0;
+            typingSpeed = 0.02f;
         }
         else if (isTyping == true & whosTalking == "corporate")
         {
@@ -178,7 +186,8 @@ public class BoardManager : MonoBehaviour {
             accounting.GetComponent<AudioSource>().volume = 0;
             manager.GetComponent<AudioSource>().volume = 0;
             orb.GetComponent<AudioSource>().volume = 0;
-           
+            typingSpeed = 0.02f;
+
         }
         else if (isTyping == false){
             wrench.GetComponent<AudioSource>().volume = 0;
@@ -190,6 +199,7 @@ public class BoardManager : MonoBehaviour {
             manager.GetComponent<AudioSource>().volume = 0;
             orb.GetComponent<AudioSource>().volume = 0;
             corporate.GetComponent<AudioSource>().volume = 0;
+            typingSpeed = 0.02f;
 
             wrench.GetComponent<Animator>().SetBool("IsTalking", false);
 

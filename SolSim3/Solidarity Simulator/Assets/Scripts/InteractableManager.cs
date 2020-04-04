@@ -7,12 +7,29 @@ public class InteractableManager : MonoBehaviour {
     public GameObject rightElevator;
     public GameObject buttonInstruction;
     public bool primed;
+    public GameObject pressCircle;
+
+    public void Start()
+    {
+        primed = false;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision is BoxCollider2D && collision.gameObject.name == "PlayerObject")
         {
             primed = true;
+        }
+    }
+
+    public void Update()
+    {
+        if (primed)
+        {
+            pressCircle.SetActive(true);
+        }
+        else{
+            pressCircle.SetActive(false);
         }
     }
 
@@ -27,7 +44,7 @@ public class InteractableManager : MonoBehaviour {
         {
             GetComponent<Animator>().SetTrigger("pour");
         }
-        if (buttonInstruction.activeSelf == true)
+        if (buttonInstruction.activeSelf == true && primed == true)
         {
             buttonInstruction.SetActive(false);
         }

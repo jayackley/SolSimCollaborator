@@ -8,9 +8,7 @@ public class ElevatorMiddleTriggerUp : MonoBehaviour
    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (middleElevator.GetComponent<ElevatorManager>().upOrDown == "down")
-        {
-            middleElevator.transform.position = middleElevator.GetComponent<ElevatorManager>().elevatorTop;
-        }
+        middleElevator.GetComponent<ElevatorManager>().goingDown = false;
+        middleElevator.transform.position = middleElevator.GetComponent<ElevatorManager>().elevatorTop;
     }
 }

@@ -17,6 +17,7 @@ public class OptionManager : MonoBehaviour
     public GameObject uiCanvas;
     public int numberOfOptions;
     public GameObject sceneManager;
+    public GameObject mainCamera;
 
     void Start()
     {
@@ -615,6 +616,7 @@ public class OptionManager : MonoBehaviour
             playerObject.GetComponent<InteractionManager>().dialogueVisible = false;
             playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             sceneManager.GetComponent<SceneManager>().convoCounter += 1;
+            mainCamera.GetComponent<CameraManager>().whosFocus = "pc";
 
         }
         else if (Event.current.Equals(Event.KeyboardEvent("return")) && numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false && sceneManager.GetComponent<SceneManager>().convoCounter < 7)
@@ -624,6 +626,7 @@ public class OptionManager : MonoBehaviour
             uiCanvas.GetComponent<Canvas>().enabled = false;
             playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             playerObject.GetComponent<MovementController>().canPoke = true;
+            mainCamera.GetComponent<CameraManager>().whosFocus = "pc";
         }
     }
 }

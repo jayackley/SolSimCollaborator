@@ -101,6 +101,7 @@ public class SceneManager : MonoBehaviour {
             solidarityPanel.transform.localPosition = new Vector3(-242, -150, 0);
             mainCamera.GetComponent<CinemachineBrain>().m_DefaultBlend.m_Time = 1;
             blackOutObject.SetActive(true);
+            blackOutObject.GetComponent<BlackOutManager>().NextSentence();
             convoCounter = 9;
         }
         if (convoCounter == 10)
