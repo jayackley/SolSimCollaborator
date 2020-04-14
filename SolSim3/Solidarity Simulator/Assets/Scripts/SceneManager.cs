@@ -29,6 +29,7 @@ public class SceneManager : MonoBehaviour {
     public GameObject boardPanel;
     public GameObject solidarityPanel;
     public GameObject blackOutObject;
+    public GameObject uiPressCircle;
 
 
     void Start()
@@ -76,8 +77,8 @@ public class SceneManager : MonoBehaviour {
 
             welder.transform.position = welderBoard.transform.position;
             welder.GetComponent<CapsuleCollider2D>().enabled = false;
-            welder.GetComponent<Animator>().enabled = false;
             welder.GetComponent<SpriteRenderer>().flipX = true;
+            welder.GetComponent<Animator>().SetTrigger("atboard");
 
             bigGuy.transform.position = bigGuyBoard.transform.position;
             bigGuy.GetComponent<CapsuleCollider2D>().enabled = false;
@@ -98,10 +99,14 @@ public class SceneManager : MonoBehaviour {
             mainCamera.GetComponent<CameraManager>().whosFocus = "corporate";
             uiCanvas.GetComponent<Canvas>().enabled = true;
             promptPanel.SetActive(false);
-            solidarityPanel.transform.localPosition = new Vector3(-242, -150, 0);
+            solidarityPanel.transform.localPosition = new Vector3(250, -245, 0);
+            uiPressCircle.transform.localPosition = new Vector3(-280, -230, 0);
             mainCamera.GetComponent<CinemachineBrain>().m_DefaultBlend.m_Time = 1;
             blackOutObject.SetActive(true);
             blackOutObject.GetComponent<BlackOutManager>().NextSentence();
+            uiPressCircle.SetActive(true);
+            mainCamera.GetComponent<CameraManager>().scene = "board";
+
             convoCounter = 9;
         }
         if (convoCounter == 10)

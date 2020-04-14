@@ -8,6 +8,12 @@ public class InteractableManager : MonoBehaviour {
     public GameObject buttonInstruction;
     public bool primed;
     public GameObject pressCircle;
+    public GameObject uiPressCircle;
+    public GameObject signTextManager;
+    public float waitTime;
+    public AudioSource soundholder;
+    public AudioClip sound;
+
 
     public void Start()
     {
@@ -22,6 +28,15 @@ public class InteractableManager : MonoBehaviour {
         }
     }
 
+    private void OnTriggerExit2D()
+    {
+        primed = false;
+    }
+
+
+
+
+
     public void Update()
     {
         if (primed)
@@ -33,21 +48,23 @@ public class InteractableManager : MonoBehaviour {
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        primed = false;
-    }
-
     public void Pour()
     {
-        if (primed == true)
-        {
-            GetComponent<Animator>().SetTrigger("pour");
-        }
         if (buttonInstruction.activeSelf == true && primed == true)
         {
             buttonInstruction.SetActive(false);
+            uiPressCircle.SetActive(false);
         }
+        if (primed == true)
+        {
+            GetComponent<Animator>().SetTrigger("pour");
+            GetComponent<BoxCollider2D>().enabled = false;
+            soundholder.PlayOneShot(sound);
+            StartCoroutine("Wait");
+            signTextManager.GetComponent<SignTextManger>().buttonIndex += 1;
+            signTextManager.GetComponent<SignTextManger>().ButtonNextSentence();
+        }
+
     }
     public void TriggerElevator()
     {
@@ -60,5 +77,13 @@ public class InteractableManager : MonoBehaviour {
             rightElevator.GetComponent<ElevatorManager>().goingDown = true;
         }
     }
+
+    public IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(waitTime);
+        GetComponent<BoxCollider2D>().enabled = true;
+
+    }
+
 
 }

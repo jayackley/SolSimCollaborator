@@ -1,5 +1,6 @@
 Base path: /Applications/Unity/Unity.app/Contents
 Cmd: initializeCompiler
+<<<<<<< 89ba23ecfec129a50c5eaa9855ca256169838e72
 Cmd: compileComputeKernel
   api=14 insize=1957 outsize=1137 ok=1
 Cmd: translateComputeKernel
@@ -29,6 +30,8 @@ Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
 Cmd: initializeCompiler
+=======
+>>>>>>> Trying to Fix Stuff to share with Bob
 Cmd: initializeCompiler
 
 Quitting shader compiler process

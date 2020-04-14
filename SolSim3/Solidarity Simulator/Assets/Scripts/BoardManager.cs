@@ -242,7 +242,7 @@ public class BoardManager : MonoBehaviour {
             whosTalking = "welder";
             mainCamera.GetComponent<CameraManager>().whosFocus = "welder";
             textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
-            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 1, 219, 255);
+            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 195, 0, 255);
 
         }
         else if (index == 7)

@@ -18,6 +18,10 @@ public class OptionManager : MonoBehaviour
     public int numberOfOptions;
     public GameObject sceneManager;
     public GameObject mainCamera;
+    public GameObject uiPressCircle;
+    public GameObject buttonInstruction;
+    public bool primed;
+    
 
     void Start()
     {
@@ -617,6 +621,12 @@ public class OptionManager : MonoBehaviour
             playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             sceneManager.GetComponent<SceneManager>().convoCounter += 1;
             mainCamera.GetComponent<CameraManager>().whosFocus = "pc";
+            primed = false;
+            sentenceIndex = 0;
+            numberOfOptions = 3;
+            playerObject.GetComponent<InteractionManager>().whosTalking = "";
+            uiPressCircle.SetActive(false);
+            buttonInstruction.SetActive(false);
 
         }
         else if (Event.current.Equals(Event.KeyboardEvent("return")) && numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false && sceneManager.GetComponent<SceneManager>().convoCounter < 7)
@@ -627,6 +637,18 @@ public class OptionManager : MonoBehaviour
             playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             playerObject.GetComponent<MovementController>().canPoke = true;
             mainCamera.GetComponent<CameraManager>().whosFocus = "pc";
+            primed = false;
+            sentenceIndex = 0;
+            numberOfOptions = 3;
+            playerObject.GetComponent<InteractionManager>().whosTalking = "";
+            uiPressCircle.SetActive(false);
+            buttonInstruction.SetActive(false);
+
+        }
+        else if (numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        {
+            uiPressCircle.SetActive(true);
+            primed = true;
         }
     }
 }
